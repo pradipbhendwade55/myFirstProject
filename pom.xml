@@ -7,7 +7,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>myfirstmulecode</name>
+	<name>myfirstmuleproject</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,6 +29,23 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri> 
+						<muleVersion>4.9.0</muleVersion> 
+						<!-- Deploy User Parameter --> 
+						<username>pradip_b</username> 
+						<password>Aum@1008</password>
+						<environment>Sandbox</environment>
+						<applicationName>myfirstmuleproject</applicationName>
+						<businessGroup>${business}</businessGroup>
+						<workerType>MICRO</workerType>
+						<workers>1</workers>
+						<objectStoreV2>true</objectStoreV2>
+						<region>us-east-2</region>
+					</cloudHubDeployment>
+				<classifier>mule-application</classifier>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
